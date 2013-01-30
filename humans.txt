@@ -1,0 +1,16 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Mark Jones -- Developer -- @mark_jones
+
+# THANKS
+
+    Kaldor Group http://kaldorgroup.com
+    Pugpig http://pugpig.com
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    Normalize.css, Zepto, Backbone
