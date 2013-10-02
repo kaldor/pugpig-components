@@ -1,0 +1,30 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Shortlist-Stylist-Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+  </head>
+  <body>
+
+  <h1>Pugpig Toggle Target</h1>
+
+  <div class="pugpig-toggle-target">
+    <div class="pugpig-toggle-target__trigger">Toggle some content</div>
+    <div class="pugpig-toggle-target__target is-invisible">I am Spartacus!</div>
+  </div>
+
+  <div class="pugpig-toggle-target multiple-trigger-target-test">
+    <div class="pugpig-toggle-target__trigger" data-pugpig-target="1">Toggle 1</div>
+    <div class="pugpig-toggle-target__trigger" data-pugpig-target="2">Toggle 2</div>
+    <div class="pugpig-toggle-target__trigger" data-pugpig-target="3">Toggle 3</div>
+    <div class="pugpig-toggle-target__target is-invisible" data-pugpig-target-name="1">1</div>
+    <div class="pugpig-toggle-target__target is-invisible" data-pugpig-target-name="2">2</div>
+    <div class="pugpig-toggle-target__target is-invisible" data-pugpig-target-name="3">3</div>
+  </div>
+
+  <script data-main="../scripts/main.js" src="../bower_components/requirejs/require.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+/**
+ * FUNCTIONS
+ */
+
+$font-base: 16 // px
+
+@function rem($target: 16)
+  @return unquote($target / $font-base + "rem")
+  
+@function nearest-multiple-floor( $num, $multiple )
+  @return floor( ( $num / $multiple ) ) * $multiple
+  
+@function nearest-multiple-ceil( $num, $multiple )
+  @return ceil( ( $num / $multiple ) ) * $multiple

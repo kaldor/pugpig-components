@@ -1,0 +1,45 @@
+/**
+ * COMPONENTS
+ * Base Modal
+ * All Modals should import this component.
+ */
+
+.pugpig-modal
+  +transition( opacity 500ms )
+  +stretch
+  +square( 100% )
+  position: fixed
+  overflow: hidden
+  opacity: 1
+  display: table
+  table-layout: fixed
+  .pugpig-modal-container__modal-only-content
+    display: block
+  .pugpig-modal-launcher
+    display: none
+
+.pugpig-modal__overlay
+  height: 100%
+
+.pugpig-modal-launcher,
+.pugpig-modal__close
+  @extend %clickable
+
+.vertically-center-content
+  vertical-align: middle
+  display: table-cell
+
+.pugpig-modal-container__modal-only-content
+  display: none
+
+.pugpig-modal__content-wrapper
+  position: relative
+  background: white
+
+.pugpig-modal__content
+  overflow-y: scroll
+  width: 100%
+  position: relative
+
+.disable-scroll
+  overflow: hidden

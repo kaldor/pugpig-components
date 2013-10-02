@@ -1,0 +1,9 @@
+build
+coverage
+node_modules
+dist
+.tmp
+.sass-cache
+bower_components
+themes/*/*/styles/*.css
+fail.png

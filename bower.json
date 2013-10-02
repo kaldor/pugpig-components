@@ -1,0 +1,16 @@
+{
+  "name": "Shortlist-Stylist-Server",
+  "version": "1.0.0",
+  "dependencies": {
+    "requirejs": "~2.1.8",
+    "backbone.marionette": "~1.1.0",
+    "lodash": "~2.0.0",
+    "jquery": "~2.0.3",
+    "backbone.wreqr": "~0.2.0",
+    "backbone.babysitter": "~0.0.6",
+    "text": "~2.0.10",
+    "hammerjs": "~1.0.5",
+    "fastclick": "~0.6.10"
+  },
+  "devDependencies": {}
+}

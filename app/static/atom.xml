@@ -1,0 +1,59 @@
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app">
+
+  <id>Stylist</id>
+  <title>Stylist</title>
+  <updated>2013-09-12T00:12:00Z</updated>
+  <author>
+    <name>Kaldor Group</name>
+  </author>
+
+  <entry>
+    <title>Modal</title>
+    <id>1</id>
+    <updated>2013-09-12T00:12:00Z</updated>
+    <published>2013-09-12T00:12:00</published>
+    <link rel="alternate" type="text/html" href="modal.html"/>
+    <link rel="related" type="text/cache-manifest" href="everything.manifest"/>
+  </entry>
+
+  <entry>
+    <title>Carousel</title>
+    <id>2</id>
+    <updated>2013-09-12T00:12:00Z</updated>
+    <published>2013-09-12T00:12:00</published>
+    <link rel="alternate" type="text/html" href="carousel.html"/>
+    <link rel="related" type="text/cache-manifest" href="everything.manifest"/>
+  </entry>
+
+  <entry>
+    <title>Carousel in a Modal</title>
+    <id>3</id>
+    <updated>2013-09-12T00:12:00Z</updated>
+    <published>2013-09-12T00:12:00</published>
+    <link rel="alternate" type="text/html" href="modal-and-carousel.html"/>
+    <link rel="related" type="text/cache-manifest" href="everything.manifest"/>
+  </entry>
+
+  <entry>
+    <title>Grouped Modal</title>
+    <id>4</id>
+    <updated>2013-09-12T00:12:00Z</updated>
+    <published>2013-09-12T00:12:00</published>
+    <link rel="alternate" type="text/html" href="grouped-modal.html"/>
+    <link rel="related" type="text/cache-manifest" href="everything.manifest"/>
+  </entry>
+
+  <entry>
+    <title>Toggle Target</title>
+    <id>5</id>
+    <updated>2013-09-12T00:12:00Z</updated>
+    <published>2013-09-12T00:12:00</published>
+    <link rel="alternate" type="text/html" href="toggle-target.html"/>
+    <link rel="related" type="text/cache-manifest" href="everything.manifest"/>
+  </entry>
+
+</feed>
+
+
+
+

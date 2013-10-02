@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:opds="http://opds-spec.org/2010/catalog">
+
+  <id>PugpigComponents</id>
+  <title>Pugpig Components</title>
+  <updated>2013-09-12T00:12:00Z</updated>
+  <author>
+    <name>Kaldor Group</name>
+  </author>
+
+  <entry>
+    <title>Sample Edition</title>
+    <id>12345</id>
+    <updated>2013-09-12T00:12:00Z</updated>
+    <dcterms:issued>2013-09-12</dcterms:issued>
+    <author>
+      <name>Pugpig</name>
+    </author>
+    <summary></summary>
+    <link rel="http://opds-spec.org/image" type="image/jpg" href="cover.jpg"/>
+    <link rel="http://opds-spec.org/acquisition" type="application/atom+xml" href="atom.xml"/>
+    <link rel="alternate" type="application/atom+xml" href="atom.xml"/>
+  </entry>
+
+</feed>

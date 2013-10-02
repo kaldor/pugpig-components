@@ -1,0 +1,44 @@
+/**
+ * COMPONENTS
+ * Base Carousel
+ * All Carousels should import this component.
+ */
+
+.pugpig-carousel
+  position: relative
+  overflow: hidden
+
+.pugpig-carousel__items
+  +transition( all 350ms )
+  -webkit-backface-visibility: hidden
+  -moz-backface-visibility: hidden
+  -ms-backface-visibility: hidden
+  > *
+    @extend %ha
+
+.pugpig-carousel__nav-button
+  @extend %clickable
+  @extend %disable-selection
+  -webkit-backface-visibility: hidden
+  -moz-backface-visibility: hidden
+  -ms-backface-visibility: hidden
+  position: absolute
+  top: 50%
+  z-index: 1
+
+.pugpig-carousel__next-button
+  right: 0
+
+.pugpig-carousel__prev-button
+  left: 0
+
+.pugpig-carousel__item
+  width: 100%
+  float: left
+
+.pugpig-carousel__pager
+  @extend %horizontal-list
+
+.pugpig-carousel__pager-item
+  &.is-active
+    font-weight: bold

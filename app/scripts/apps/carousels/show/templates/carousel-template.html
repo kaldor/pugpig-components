@@ -1,0 +1,14 @@
+<div class="pugpig-carousel is-loading">
+  <span class="pugpig-carousel__nav-button pugpig-carousel__prev-button is-invisible">Prev</span>
+  <span class="pugpig-carousel__nav-button pugpig-carousel__next-button">Next</span>
+  <div class="pugpig-carousel__items-wrapper">
+    <ul class="pugpig-carousel__items">
+      <% _.each( items, function( item ) { %>
+      <li class="pugpig-carousel__item">
+        <%= item %>
+      </li>
+      <% }); %>
+    </ul>
+  </div>
+  <div class="pugpig-carousel__progress"></div>
+</div>

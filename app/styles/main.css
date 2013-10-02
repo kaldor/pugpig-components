@@ -1,0 +1,566 @@
+/*
+ * MAIN - This should be replicated for each page
+ */
+/*
+ * GLOBAL
+ */
+/* VARIABLES */
+/* VENDOR */
+/* normalize.css v1.1.0 | MIT License | git.io/normalize */
+/* normalize.css v1.1.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden] {
+  display: none;
+}
+
+/* normalize.css v1.1.0 | Base | MIT License | git.io/normalize */
+html {
+  font-size: 100%;
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+/* normalize.css v1.1.0 | Links | MIT License | git.io/normalize */
+a:focus {
+  outline: thin dotted;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* normalize.css v1.1.0 | Typography | MIT License | git.io/normalize */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+
+h6 {
+  font-size: 0.67em;
+  margin: 2.33em 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+blockquote {
+  margin: 1em 40px;
+}
+
+dfn {
+  font-style: italic;
+}
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+p,
+pre {
+  margin: 1em 0;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  _font-family: "courier new", monospace;
+  font-size: 1em;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+q {
+  quotes: none;
+}
+
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0;
+}
+
+dd {
+  margin: 0 0 0 40px;
+}
+
+menu,
+ol,
+ul {
+  padding: 0 0 0 40px;
+}
+
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+/* normalize.css v1.1.0 | Embedded Content | MIT License | git.io/normalize */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* normalize.css v1.1.0 | Figures | MIT License | git.io/normalize */
+figure {
+  margin: 0;
+}
+
+/* normalize.css v1.1.0 | Forms | MIT License | git.io/normalize */
+form {
+  margin: 0;
+}
+
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+  *margin-left: -7px;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  *overflow: visible;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+  *height: 13px;
+  *width: 13px;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+/* normalize.css v1.1.0 | Tables | MIT License | git.io/normalize */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* PUGPIG BOILERPLATE */
+/*
+ * MIXINS
+ */
+/*
+ * PLACEHOLDERS
+ */
+.pugpig-modal-launcher,
+.pugpig-modal__close, .pugpig-carousel__nav-button {
+  cursor: pointer;
+}
+
+.is-loading *, .pugpig-modal, .pugpig-carousel__items, .pugpig-carousel__items > * {
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+.pugpig-carousel__nav-button {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.pugpig-carousel__pager:before, .pugpig-carousel__pager:after {
+  content: " ";
+  display: table;
+}
+.pugpig-carousel__pager:after {
+  clear: both;
+}
+.pugpig-carousel__pager li {
+  display: inline-block;
+}
+
+/*
+ * FUNCTIONS
+ */
+/*
+ * RESET
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+  -webkit-touch-callout: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+i {
+  font-style: normal;
+}
+
+.is-loading * {
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+/* PROJECT SPECIFIC */
+/*
+ * BASE
+ *
+ * Base styles that do not belong to any component or are not for layout
+ */
+.is-invisible {
+  opacity: 0 !important;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+/*
+ * COMPONENTS
+ * Import all component Sass partials here e.g
+ */
+/*
+ * COMPONENTS
+ * Project Modal
+ */
+/*
+ * COMPONENTS
+ * Base Modal
+ * All Modals should import this component.
+ */
+.pugpig-modal {
+  -moz-transition: opacity 500ms;
+  -ms-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  -webkit-transition: opacity 500ms;
+  transition: opacity 500ms;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+  opacity: 1;
+  display: table;
+  table-layout: fixed;
+}
+.pugpig-modal .pugpig-modal-container__modal-only-content {
+  display: block;
+}
+.pugpig-modal .pugpig-modal-launcher {
+  display: none;
+}
+
+.pugpig-modal__overlay {
+  height: 100%;
+}
+
+.vertically-center-content {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.pugpig-modal-container__modal-only-content {
+  display: none;
+}
+
+.pugpig-modal__content-wrapper {
+  position: relative;
+  background: white;
+}
+
+.pugpig-modal__content {
+  overflow-y: scroll;
+  width: 100%;
+  position: relative;
+}
+
+.disable-scroll {
+  overflow: hidden;
+}
+
+.pugpig-modal__content-wrapper {
+  margin: 80px;
+  padding: 40px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+/*
+ * COMPONENTS
+ * Project Carousel
+ */
+/*
+ * COMPONENTS
+ * Base Carousel
+ * All Carousels should import this component.
+ */
+.pugpig-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.pugpig-carousel__items {
+  -moz-transition: all 350ms;
+  -ms-transition: all 350ms;
+  -o-transition: all 350ms;
+  -webkit-transition: all 350ms;
+  transition: all 350ms;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+}
+
+.pugpig-carousel__nav-button {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+
+.pugpig-carousel__next-button {
+  right: 0;
+}
+
+.pugpig-carousel__prev-button {
+  left: 0;
+}
+
+.pugpig-carousel__item {
+  width: 100%;
+  float: left;
+}
+
+.pugpig-carousel__pager-item.is-active {
+  font-weight: bold;
+}
+
+/*
+ * COMPONENTS
+ * Toggle Target
+ * Toggleable figcaption on figures
+ */
+.pugpig-toggle-target__target.is-invisible {
+  position: absolute;
+  left: -9999px;
+}
