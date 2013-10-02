@@ -19,13 +19,9 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
   // configurable paths
-  var distRoot = 'dist',
-    yeomanConfig = {
+  var yeomanConfig = {
       app: 'app',
-      dist: {
-        'static': distRoot + '/pugpig-stylist-static',
-        'theme': distRoot + '/pugpig-stylist-theme'
-      }
+      dist: 'dist'
     };
 
   grunt.initConfig({
@@ -82,7 +78,7 @@ module.exports = function (grunt) {
           }
         }
       },
-      'static': {
+      dist: {
         options: {
           middleware: function (connect) {
             return [
@@ -98,35 +94,20 @@ module.exports = function (grunt) {
       }
     },
     clean: {
-      'static': {
+      dist: {
         files: [{
           dot: true,
           src: [
             '.tmp',
-            '<%= yeoman.dist.static %>/*',
-            '!<%= yeoman.dist.static %>/.git*'
-          ]
-        }]
-      },
-      theme: {
-        files: [{
-          dot: true,
-          src: [
-            '.tmp',
-            '<%= yeoman.dist.theme %>/*',
-            '!<%= yeoman.dist.theme %>/.git*'
+            '<%= yeoman.dist %>/*',
+            '!<%= yeoman.dist %>/.git*'
           ]
         }]
       },
       server: '.tmp'
     },
     compass: {
-      'static': {
-        options: {
-          config: '.compass.rb'
-        }
-      },
-      theme: {
+      dist: {
         options: {
           config: '.compass.rb'
         }
@@ -138,84 +119,47 @@ module.exports = function (grunt) {
       }
     },
     imagemin: {
-      'static': {
+      dist: {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
           src: '{,*/}*.{png,jpg,jpeg}',
-          dest: '<%= yeoman.dist.static %>/images'
-        }]
-      },
-      theme: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg}',
-          dest: '<%= yeoman.dist.theme %>/images'
+          dest: '<%= yeoman.dist %>/images'
         }]
       }
     },
     svgmin: {
-      'static': {
+      dist: {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
           src: '{,*/}*.svg',
-          dest: '<%= yeoman.dist.static %>/images'
-        }]
-      },
-      theme: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.svg',
-          dest: '<%= yeoman.dist.theme %>/images'
+          dest: '<%= yeoman.dist %>/images'
         }]
       }
     },
     cssmin: {
-      'static': {
+      dist: {
         expand: true,
-        cwd: '<%= yeoman.dist.static %>/styles',
+        cwd: '<%= yeoman.dist %>/styles',
         src: ['*.css'],
-        dest: '<%= yeoman.dist.static %>/styles',
-        ext: '.css'
-      },
-      theme: {
-        expand: true,
-        cwd: '<%= yeoman.dist.theme %>/styles',
-        src: ['*.css'],
-        dest: '<%= yeoman.dist.theme %>/styles',
+        dest: '<%= yeoman.dist %>/styles',
         ext: '.css'
       }
     },
     copy: {
-      'static': {
+      dist: {
         files: [{
           expand: true,
           dot: true,
           cwd: '<%= yeoman.app %>',
-          dest: '<%= yeoman.dist.static %>',
+          dest: '<%= yeoman.dist %>',
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
             'images/{,*/}*.{webp,gif}',
             'styles/*.css',
             'static/**/*',
-            'fonts/*'
-          ]
-        }]
-      },
-      theme: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>',
-          dest: '<%= yeoman.dist.theme %>',
-          src: [
-            '*.{php,info,png}',
-            'images/{,*/}*.{webp,gif}',
-            'styles/*.css',
             'fonts/*'
           ]
         }]
@@ -227,32 +171,18 @@ module.exports = function (grunt) {
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
       },
-      static_scripts: {
+      scripts: {
         expand: true,
         dot: true,
         cwd: '.tmp/scripts',
-        dest: '<%= yeoman.dist.static %>/scripts',
+        dest: '<%= yeoman.dist %>/scripts',
         src: '{,*/}*.js'
       },
-      theme_scripts: {
-        expand: true,
-        dot: true,
-        cwd: '.tmp/scripts',
-        dest: '<%= yeoman.dist.theme %>/scripts',
-        src: '{,*/}*.js'
-      },
-      static_bower_components: {
+      bower_components: {
         expand: true,
         dot: true,
         cwd: '.tmp/bower_components',
-        dest: '<%= yeoman.dist.static %>/bower_components',
-        src: '**/*'
-      },
-      theme_bower_components: {
-        expand: true,
-        dot: true,
-        cwd: '.tmp/bower_components',
-        dest: '<%= yeoman.dist.theme %>/bower_components',
+        dest: '<%= yeoman.dist %>/bower_components',
         src: '**/*'
       }
     },
@@ -261,26 +191,11 @@ module.exports = function (grunt) {
         'compass',
         'copy:styles'
       ],
-      'static': [
+      dist: [
         'compass',
-        'imagemin:static',
-        'svgmin:static'
-      ],
-      theme: [
-        'compass',
-        'imagemin:theme',
-        'svgmin:theme'
+        'imagemin:dist',
+        'svgmin:dist'
       ]
-    },
-    replace: {
-      update_version: {
-        src: ['<%= yeoman.dist.theme %>/stylist.info'],
-        overwrite: true,
-        replacements: [{
-          from: /version\s*=\s*".*?"/g,
-          to: "version =\"7.x-<%= grunt.config('meta-version').toString().replace(/\.([^\.]*)$/g, '_$1') %>\""
-        }]
-      }
     },
     casper : {
       options : {
@@ -292,15 +207,15 @@ module.exports = function (grunt) {
     },
     useminPrepare: {
       options: {
-        dest: '<%= yeoman.dist.static %>'
+        dest: '<%= yeoman.dist %>'
       },
       html: '<%= yeoman.app %>/static/index.html'
     },
     usemin: {
       options: {
-        dirs: ['<%= yeoman.dist.static %>']
+        dirs: ['<%= yeoman.dist %>']
       },
-      html: ['<%= yeoman.dist.static %>/static/{,*/}*.html']
+      html: ['<%= yeoman.dist %>/static/{,*/}*.html']
     },
     requirejs: {
       dist: {
@@ -318,13 +233,13 @@ module.exports = function (grunt) {
     rename: {
       bower_components: {
         files: [{
-          src: [ distRoot + '/bower_components' ],
+          src: [ 'bower_components' ],
           dest: '.tmp/bower_components'
         }]
       },
       scripts: {
         files: [{
-          src: [ distRoot + '/scripts' ],
+          src: [ 'scripts' ],
           dest: '.tmp/scripts'
         }]
       }
@@ -346,85 +261,19 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('build', [
+    'clean:dist',
     'useminPrepare',
-    'build:theme',
-    'build:static',
     'requirejs',
     'uglify',
-    'usemin',
+    'concurrent:dist',
+    'copy:dist',
+    'cssmin:dist',
     'rename',
-    'copy:static_scripts',
-    'copy:theme_scripts',
-    'copy:static_bower_components',
-    'copy:theme_bower_components',
+    'copy:bower_components',
+    'copy:scripts',
+    'usemin',
     'clean:server'
   ]);
-
-  grunt.registerTask('build:theme', [
-    'clean:theme',
-    'concurrent:theme',
-    'copy:theme',
-    'cssmin:theme',
-    'describe',
-    'replace:update_version'
-  ]);
-
-  grunt.registerTask('build:static', [
-    'clean:static',
-    'concurrent:static',
-    'copy:static',
-    'cssmin:static'
-  ]);
-
-  // TODO: npm module that performs this task
-  grunt.registerTask('describe', 'Describes current git commit', function (prop) {
-
-    var done = this.async();
-
-    grunt.log.write('Describe current commit: ');
-
-    grunt.util.spawn({
-      cmd: 'git',
-      args: [ 'describe', '--tags', '--abbrev=0', '--match', '[0-9]*' ]
-    }, function (err, result) {
-
-      var latestVersion = err ? '0.0.0' : result.toString().trim();
-
-      grunt.util.spawn({
-        cmd : 'git',
-        args : [ 'describe', '--tags', '--abbrev=0', '--exact-match', 'HEAD' ]
-      }, function (err, result) {
-
-        if (err || latestVersion !== result) {
-          latestVersion = latestVersion + '_dev';
-        }
-
-        grunt.util.spawn({
-          cmd : 'git',
-          args : [ 'diff', '--shortstat' ]
-        }, function (err, result) {
-          if (err) {
-            grunt.log.error(err);
-            return done(false);
-          }
-
-          if ( result.toString().trim().length ) {
-            latestVersion = latestVersion + '_local';
-          }
-
-          grunt.config(prop || 'meta-version', latestVersion);
-
-          grunt.log.ok(latestVersion);
-
-          done( latestVersion );
-
-        });
-
-      });
-
-    });
-
-  });
 
   grunt.registerTask('default', [
     'build'
