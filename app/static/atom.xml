@@ -1,7 +1,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app">
 
-  <id>Stylist</id>
-  <title>Stylist</title>
+  <id>PugpigComponents</id>
+  <title>Pugpig Components</title>
   <updated>2013-09-12T00:12:00Z</updated>
   <author>
     <name>Kaldor Group</name>
