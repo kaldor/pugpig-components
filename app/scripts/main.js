@@ -51,7 +51,6 @@
     'views/_base/item-view',
     'apps/modals/modals-app',
     'apps/carousels/carousels-app',
-    'apps/back-to-top/back-to-top-app',
     'apps/toggle-target/toggle-target-app'
   ], function() {
 
