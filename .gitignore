@@ -5,5 +5,5 @@ dist
 .tmp
 .sass-cache
 bower_components
-themes/*/*/styles/*.css
+app/styles/*.css
 fail.png
