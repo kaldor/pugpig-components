@@ -48,12 +48,18 @@ define([
         this.setupHammer();
         $( window ).on( 'resize', _.bind( this.resizeCarousel, this ) );
 
+        this.setSubViewElements();
+
+      },
+      setSubViewElements: function() {
+        this.pagerEl = this.$( selectors.show.pager );
+        this.progressEl = this.$( selectors.show.progress );
       },
       resizeCarousel: function() {
         this.trigger( 'resize:carousel' );
       },
       setupHammer: function() {
-        this.$el.hammer({
+        this.ui.itemsContainer.hammer({
           drag_lock_to_axis: true
         }).on('release dragleft dragright swipeleft swiperight', _.bind( this.handleHammer, this ) );
       },
@@ -133,7 +139,6 @@ define([
     });
 
     Show.Pager = App.Views.ItemView.extend({
-      el: selectors.show.pager,
       events: function() {
         var events = {};
         events[ 'click ' + selectors.show.pagerItem ] = 'changeItem';
@@ -151,7 +156,6 @@ define([
     });
 
     Show.Progress = App.Views.ItemView.extend({
-      el: selectors.show.progress,
       template: _.template( ProgressTemplate ),
       render: function( options ) {
         this.$el.html( this.template({

@@ -47,9 +47,11 @@ define([
         this.setupCarouselView();
 
         this.pagerView = this.getPagerView();
+        this.pagerView.setElement( this.carouselView.progressEl );
         this.setupPagerView();
 
         this.progressView = this.getProgressView();
+        this.progressView.setElement( this.carouselView.progressEl );
         this.setupProgressView();
 
         this.listenToViews();
