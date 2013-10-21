@@ -93,7 +93,7 @@ define([
       },
       handleHammerDrag: function( e ) {
         this.ui.itemsContainer.css({
-          transform: 'translateX(' + ( -this.currentOffset + e.gesture.deltaX ) + 'px)'
+          transform: 'translate3d(' + ( -this.currentOffset + e.gesture.deltaX ) + 'px, 0px, 0px)'
         });
       },
       handleHammerRelease: function( e ) {
@@ -133,7 +133,7 @@ define([
       changeItem: function( index ) {
         this.currentOffset = this.containerWidth * index;
         this.ui.itemsContainer.css({
-          transform: 'translateX(-' + ( this.currentOffset ) + 'px)'
+          transform: 'translate3d(-' + ( this.currentOffset ) + 'px, 0px, 0px)'
         });
       }
     });

@@ -48,13 +48,13 @@
 
   casper.then( function() {
 
-    this.test.info( 'Test prev button applies a transform of translateX(0px) to carousel items container when we return to first slide' );
+    this.test.info( 'Test prev button applies a transform of translate3d(0px, 0px, 0px) to carousel items container when we return to first slide' );
 
     this.click( '.pugpig-carousel__prev-button' );
 
-    var hasTransform = this.getElementAttribute( '.pugpig-carousel__items', 'style' ).indexOf( 'transform: translateX(0px)' ) > -1 ? true : false;
+    var hasTransform = this.getElementAttribute( '.pugpig-carousel__items', 'style' ).indexOf( 'transform: translate3d(0px, 0px, 0px)' ) > -1 ? true : false;
 
-    this.test.assertEquals( hasTransform, true, 'Carousel items container has a transform of translateX(0px) applied' );
+    this.test.assertEquals( hasTransform, true, 'Carousel items container has a transform of translate3d(0px, 0px, 0px) applied' );
 
   });
 
