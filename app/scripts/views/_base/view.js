@@ -10,6 +10,7 @@ define([
       IS_INVISIBLE_CLASS: 'is-invisible',
       IS_LOADING_CLASS: 'is-loading',
       IS_ACTIVE_CLASS: 'is-active',
+      IS_TOGGLED_CLASS: 'is-toggled',
       setInstancePropertiesFor: function() {
         var args, key, val, _ref, _results,
           __slice = [].slice;

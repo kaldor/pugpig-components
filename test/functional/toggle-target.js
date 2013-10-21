@@ -42,90 +42,6 @@
 
   casper.then( function() {
 
-    this.test.info( 'Test second toggle button displays the second caption' );
-
-    this.click( '.pugpig-toggle-target:nth-of-type(2) .pugpig-toggle-target__trigger' );
-
-    this.waitForSelector( '.pugpig-toggle-target:nth-of-type(2) .pugpig-toggle-target__target:not(.is-invisible)', function() {
-      this.test.pass( 'Target was toggled into view' );
-    }, function() {
-      this.test.fail( 'Target wasn\'t toggled into view' );
-    }, 2000 );
-
-  });
-
-  casper.then( function() {
-
-    this.test.info( 'Test second toggle button hides the second caption if its visible' );
-
-    this.click( '.pugpig-toggle-target:nth-of-type(2) .pugpig-toggle-target__trigger' );
-
-    this.waitForSelector( '.pugpig-toggle-target:nth-of-type(2) .pugpig-toggle-target__target.is-invisible', function() {
-      this.test.pass( 'Target was hidden from view' );
-    }, function() {
-      this.test.fail( 'Target wasn\'t hidden from view' );
-    }, 2000 );
-
-  });
-
-  casper.then( function() {
-
-    this.test.info( 'Test third toggle button displays the third caption' );
-
-    this.click( '.pugpig-toggle-target:nth-of-type(3) .pugpig-toggle-target__trigger' );
-
-    this.waitForSelector( '.pugpig-toggle-target:nth-of-type(3) .pugpig-toggle-target__target:not(.is-invisible)', function() {
-      this.test.pass( 'Target was toggled into view' );
-    }, function() {
-      this.test.fail( 'Target wasn\'t toggled into view' );
-    }, 2000 );
-
-  });
-
-  casper.then( function() {
-
-    this.test.info( 'Test third toggle button hides the third caption if its visible' );
-
-    this.click( '.pugpig-toggle-target:nth-of-type(3) .pugpig-toggle-target__trigger' );
-
-    this.waitForSelector( '.pugpig-toggle-target:nth-of-type(3) .pugpig-toggle-target__target.is-invisible', function() {
-      this.test.pass( 'Target was hidden from view' );
-    }, function() {
-      this.test.fail( 'Target wasn\'t hidden from view' );
-    }, 2000 );
-
-  });
-
-  casper.then( function() {
-
-    this.test.info( 'Test fourth toggle button displays the fourth caption' );
-
-    this.click( '.pugpig-toggle-target:nth-of-type(4) .pugpig-toggle-target__trigger' );
-
-    this.waitForSelector( '.pugpig-toggle-target:nth-of-type(4) .pugpig-toggle-target__target:not(.is-invisible)', function() {
-      this.test.pass( 'Target was toggled into view' );
-    }, function() {
-      this.test.fail( 'Target wasn\'t toggled into view' );
-    }, 2000 );
-
-  });
-
-  casper.then( function() {
-
-    this.test.info( 'Test fourth toggle button hides the fourth caption if its visible' );
-
-    this.click( '.pugpig-toggle-target:nth-of-type(4) .pugpig-toggle-target__trigger' );
-
-    this.waitForSelector( '.pugpig-toggle-target:nth-of-type(4) .pugpig-toggle-target__target.is-invisible', function() {
-      this.test.pass( 'Target was hidden from view' );
-    }, function() {
-      this.test.fail( 'Target wasn\'t hidden from view' );
-    }, 2000 );
-
-  });
-
-  casper.then( function() {
-
     this.test.info( 'Test functionality based on data-pugpig-target / data-pugpig-target-name linkage to allow for multiple triggers / targets in one parent element' );
 
     this.click( '.multiple-trigger-target-test .pugpig-toggle-target__trigger:first-child' );
@@ -142,6 +58,22 @@
       this.test.pass( 'Target was hidden from view' );
     }, function() {
       this.test.fail( 'Target wasn\'t hidden from view' );
+    }, 2000 );
+
+  });
+
+  casper.then( function() {
+
+    this.test.info( 'Test that toggling a target when one is already visible toggles the previous target' );
+
+    this.click( '.multiple-trigger-target-test .pugpig-toggle-target__trigger:first-child' );
+
+    this.click( '.multiple-trigger-target-test .pugpig-toggle-target__trigger:nth-child(2)' );
+
+    this.waitForSelector( '.multiple-trigger-target-test .pugpig-toggle-target__target[data-pugpig-target-name="1"].is-invisible', function() {
+      this.test.pass( 'Previously visible target was hidden from view' );
+    }, function() {
+      this.test.fail( 'Previously visible target wasn\'t hidden from view' );
     }, 2000 );
 
   });
