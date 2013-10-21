@@ -44,6 +44,14 @@
 
   });
 
+    casper.then( function() {
+
+    this.test.info( 'Test the Pager view updates correctly' );
+
+      this.test.assertEquals( this.getElementInfo('.pugpig-carousel__pager .is-active').text, '2', 'Pager view has updated to reflect the item change.' );
+
+    });
+
   casper.then( function() {
 
     this.test.info( 'Test previous button is visible once we\'re not viewing the first slide' );
