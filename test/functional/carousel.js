@@ -38,6 +38,16 @@
 
   casper.then( function() {
 
+    this.test.info( 'Test the Progress view updates correctly' );
+
+    this.test.assertEquals( this.getElementInfo('.pugpig-carousel__progress').text.replace(/\s/g,'&nbsp;' ), '2&nbsp;/&nbsp;4', 'Progress view has updated to reflect the item change.' );
+
+  });
+
+  casper.then( function() {
+
+    this.test.info( 'Test previous button is visible once we\'re not viewing the first slide' );
+
     this.waitUntilVisible( '.pugpig-carousel__prev-button', function() {
       this.test.pass( 'Carousel previous button is visible now we\'re not viewing the first slide' );
     }, function() {
