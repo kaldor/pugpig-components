@@ -68,6 +68,8 @@ define([
         e.gesture.preventDefault();
         this.disableAnimation();
 
+        this.trigger( 'start:carousel:drag' );
+
         switch(e.type) {
           case 'dragright':
             // intentional fall through
@@ -89,6 +91,7 @@ define([
       handleHammerSwipe: function( e, type ) {
         this.enableAnimation();
         this.trigger( 'click:carousel:' + type );
+        this.trigger( 'end:carousel:drag' );
         e.gesture.stopDetect();
       },
       handleHammerDrag: function( e ) {
@@ -107,6 +110,7 @@ define([
         } else {
           this.trigger( 'reset:carousel' );
         }
+        this.trigger( 'end:carousel:drag' );
       },
       updateContainerWidth: function() {
         this.containerWidth = this.getContainerWidth();
@@ -115,6 +119,9 @@ define([
       getContainerWidth: function() {
         return this.$el.innerWidth();
       },
+      getItemHeight: function() {
+        return this.ui.items.eq( 0 ).innerHeight();
+      },
       resizeContainerToFitItems: function() {
         this.ui.itemsContainer.width( this.containerWidth * this.numItems );
         return this;
@@ -122,6 +129,15 @@ define([
       freezeItemWidth: function() {
         this.$( selectors.show.items ).width( this.containerWidth );
         return this;
+      },
+      freezeItemHeights: function() {
+        this.$( selectors.show.items ).height( this.getItemHeight() );
+        return this;
+      },
+      unfreezeItemHeights: function() {
+        this.$( selectors.show.items ).css({
+          height: ''
+        });
       },
       render: function( itemHtml ) {
         if ( !this.useTemplate ) {
@@ -135,6 +151,43 @@ define([
         this.ui.itemsContainer.css({
           transform: 'translate3d(-' + ( this.currentOffset ) + 'px, 0px, 0px)'
         });
+        return this;
+      },
+      detachItems: function( index ) {
+
+        if ( !this.itemsDetached ) {
+          var before = index > 0 ? this.ui.items.slice( 0, index - 1 ) : null,
+            after = index < this.ui.items.length ? this.ui.items.slice( index + 2, this.ui.items.length ) : null;
+
+          if ( !_.isNull( before ) ) {
+            _.each( before, function( el ) {
+              var item = $( el );
+              item.data( 'html', item.html() );
+            });
+            before.empty();
+          }
+          if ( !_.isNull( after ) ) {
+            _.each( after, function( el ) {
+              var item = $( el );
+              item.data( 'html', item.html() );
+            });
+            after.empty();
+          }
+          this.itemsDetached = true;
+        }
+
+        return this;
+      },
+      reattachItems: function() {
+        _.each( this.ui.items, function( el ) {
+          var item = $( el ),
+            html = item.data( 'html' );
+          if ( html ) {
+            item.html( html );
+          }
+        })
+        delete this.itemsDetached;
+        return this;
       }
     });
 

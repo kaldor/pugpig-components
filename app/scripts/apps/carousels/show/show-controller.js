@@ -75,6 +75,16 @@ define([
           this.itemIndex = index;
           this.changeItem();
         }, this ) );
+
+        this.listenTo( this.carouselView, 'start:carousel:drag', _.bind( function() {
+          this.carouselView.freezeItemHeights()
+            .detachItems( this.itemIndex );
+        }, this ) );
+
+        this.listenTo( this.carouselView, 'end:carousel:drag', _.bind( function() {
+          this.carouselView.reattachItems()
+            .unfreezeItemHeights();
+        }, this ) );
       },
       listenForCloseEvent: function() {
         if ( this.options.closeEvent ) {
