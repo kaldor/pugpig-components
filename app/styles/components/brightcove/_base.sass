@@ -1,0 +1,21 @@
+/**
+ * COMPONENTS
+ * Base Brightcove
+ * All Brightcove components should import this.
+ */
+
+$name: pugpig-brightcove
+
+.#{$name}
+  position: relative
+  padding-top: 56.25%
+
+.#{$name}__poster
+  @extend %clickable
+  z-index: 2
+
+.#{$name}__poster,
+.#{$name}__video
+  position: absolute
+  top: 0
+  left: 0

@@ -51,7 +51,8 @@
     'views/_base/item-view',
     'apps/modals/modals-app',
     'apps/carousels/carousels-app',
-    'apps/toggle-target/toggle-target-app'
+    'apps/toggle-target/toggle-target-app',
+    'apps/brightcove/brightcove-app'
   ], function() {
 
     require([

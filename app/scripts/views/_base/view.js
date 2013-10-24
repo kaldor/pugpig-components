@@ -49,6 +49,12 @@ define([
       close: function() {
         _close.call( this );
         App.vent.trigger( 'log:close:view', this );
+      },
+      getWidth: function() {
+        return this.$el.innerWidth();
+      },
+      getHeight: function() {
+        return this.$el.innerHeight();
       }
     });
 

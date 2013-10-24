@@ -13,6 +13,7 @@ define([
         this.listenTo( this.showView, 'close:modal',  this.triggerCloseModal );
         this.listenTo( this.showView, 'click:modal:overlay', this.triggerCloseModal );
         this.listenTo( this.showView, 'setup:modal:carousels', this.setupModalCarousels );
+        this.listenTo( this.showView, 'setup:modal:videos', this.setupModalVideos );
         this.listenTo( this.showView, 'setup:grouped:modal', this.setupGroupedModal );
         this.appendShowViewToBody();
         this.toggleScrolling();
@@ -50,6 +51,12 @@ define([
           closeEvent: 'close:modal',
           group: options.group,
           initialIndex: options.initialIndex
+        });
+      },
+      setupModalVideos: function() {
+        App.execute( 'create:container:videos', {
+          container: selectors.show.el,
+          closeEvent: 'close:modal'
         });
       }
     });

@@ -60,6 +60,7 @@ define([
           html = this.modalContent.$( selectors.setup.content ).clone();
           this.ui.content.html( html );
           this.trigger( 'setup:modal:carousels' );
+          this.trigger( 'setup:modal:videos' );
         }
         return this;
       }
