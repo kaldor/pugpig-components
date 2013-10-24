@@ -1,5 +1,6 @@
 define([
-  'app'
+  'app',
+  'apps/brightcove/config'
 ], function( App ) {
 
   App.module('BrightcoveApp.Show', function( Show, App, Backbone, Marionette, $, _ ) {
@@ -38,6 +39,8 @@ define([
       renderVideo: function( data ) {
         var url = data.renditions[ 0 ].url;
         this.showView.render( url )
+          .showVideo()
+          .resizeVideo()
           .removePoster()
           .play();
       },

@@ -1,8 +1,7 @@
 define([
   'app',
-  'text!apps/brightcove/show/templates/show-template.html',
   'apps/brightcove/config'
-], function( App, ShowTemplate ) {
+], function( App ) {
 
   App.module('BrightcoveApp.Show', function( Show, App, Backbone, Marionette, $, _ ) {
 
@@ -10,9 +9,9 @@ define([
 
     Show.View = App.Views.ItemView.extend({
       ui: {
-        poster: selectors.show.poster
+        poster: selectors.show.poster,
+        video: selectors.show.video
       },
-      template: _.template( ShowTemplate ),
       triggers: function() {
         var triggers = {};
         triggers[ 'click ' + selectors.show.poster ] = 'get:brightcove:video:url';
@@ -29,15 +28,12 @@ define([
         if ( _.isUndefined( url ) ) {
           return false;
         }
-        this.$el.append( this.template({
+        this.ui.video.attr({
           controls: 'controls',
           preload: 'none',
-          width: this.getWidth(),
-          height: this.getHeight(),
-          poster: this.getPosterSrc(),
-          src: url
-        }) );
-        this.ui.video = this.$( 'video' );
+          src: url,
+          poster: this.getPosterSrc()
+        });
         return this;
       },
       getVideoId: function() {
@@ -54,6 +50,7 @@ define([
           width: this.getWidth(),
           height: this.getHeight(),
         });
+        return this;
       },
       removePoster: function() {
         setTimeout( _.bind( function() {
@@ -61,6 +58,10 @@ define([
             zIndex: -1
           }) );
         }, this ), 500 );
+        return this;
+      },
+      showVideo: function() {
+        this.showUI( 'video' );
         return this;
       },
       play: function() {
