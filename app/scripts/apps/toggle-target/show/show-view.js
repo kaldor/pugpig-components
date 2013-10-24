@@ -1,7 +1,7 @@
 define([
   'app',
   'apps/toggle-target/config'
-], function( App, LayoutTemplate ) {
+], function( App ) {
 
   App.module('ToggleTargetApp.Show', function( Show, App, Backbone, Marionette, $, _ ) {
 
