@@ -73,6 +73,7 @@ define([
         if ( _.isUndefined( this.ui.video ) ) {
           return false;
         }
+        this.bindUIElements();
         var video = this.getVideoHTMLElement();
         video.pause();
       },

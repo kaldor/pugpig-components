@@ -17,6 +17,7 @@ define([
 
         if ( this.options.closeEvent ) {
           App.vent.on( this.options.closeEvent, _.bind( this.close, this ) );
+          this.setupShowView();
         }
       },
       getShowView: function() {
