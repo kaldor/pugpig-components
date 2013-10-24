@@ -1,5 +1,6 @@
 define([
-  'app'
+  'app',
+  'apps/carousels/config'
 ], function( App ) {
 
   App.module('ModalsApp.Show', function( Show, App, Backbone, Marionette, $, _ ) {
