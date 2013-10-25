@@ -14,7 +14,9 @@ define([
       ui: {
         nextButton: selectors.show.nextButton,
         prevButton: selectors.show.prevButton,
-        items: selectors.show.items
+        items: selectors.show.items,
+        itemsContainer: selectors.show.itemsContainer,
+        itemsWrapper: selectors.show.itemsWrapper
       },
       triggers: function() {
         var triggers = {};
@@ -42,9 +44,9 @@ define([
           this.setInstancePropertiesFor( 'html' );
         }
 
+        this.bindUIElements();
         this.updateContainerWidth();
         this.currentOffset = 0;
-        this.ui.itemsContainer = this.$( selectors.show.itemsContainer );
         this.setupHammer();
         $( window ).on( 'resize', _.bind( this.resizeCarousel, this ) );
 
@@ -112,32 +114,35 @@ define([
         }
         this.trigger( 'end:carousel:drag' );
       },
+      resizeContainerToFitItems: function() {
+        this.ui.itemsContainer.width( this.containerWidth * this.numItems );
+        return this;
+      },
+      getContainerWidth: function() {
+        return this.ui.itemsWrapper.innerWidth();
+      },
+      getContainerHeight: function() {
+        return this.ui.itemsWrapper.innerHeight();
+      },
       updateContainerWidth: function() {
         this.containerWidth = this.getContainerWidth();
         return this;
       },
-      getContainerWidth: function() {
-        return this.$el.innerWidth();
-      },
-      getItemHeight: function() {
-        return this.ui.items.eq( 0 ).innerHeight();
-      },
-      resizeContainerToFitItems: function() {
-        this.ui.itemsContainer.width( this.containerWidth * this.numItems );
+      updateContainerHeight: function() {
+        this.containerHeight = this.getContainerHeight();
         return this;
       },
       freezeItemWidth: function() {
         this.$( selectors.show.items ).width( this.containerWidth );
         return this;
       },
-      freezeItemHeights: function() {
-        this.$( selectors.show.items ).height( this.getItemHeight() );
+      freezeItemHeight: function() {
+        this.$( selectors.show.items ).height( this.containerHeight );
         return this;
       },
-      unfreezeItemHeights: function() {
-        this.$( selectors.show.items ).css({
-          height: ''
-        });
+      unfreezeItemHeight: function() {
+        this.$( selectors.show.items ).height( '' );
+        return this;
       },
       render: function( itemHtml ) {
         if ( !this.useTemplate ) {

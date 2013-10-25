@@ -14,6 +14,7 @@ define([
           prevButton: moduleNamespace + '__prev-button',
           items: moduleNamespace + '__item',
           itemsContainer: moduleNamespace + '__items',
+          itemsWrapper: moduleNamespace + '__items-wrapper',
           pager: moduleNamespace + '__pager',
           pagerItem: moduleNamespace + '__pager-item',
           progress: moduleNamespace + '__progress'

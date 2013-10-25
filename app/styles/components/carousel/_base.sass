@@ -4,22 +4,26 @@
  * All Carousels should import this component.
  */
 
-.pugpig-carousel
+.pugpig-carousel,
+.pugpig-carousel__items-wrapper
   position: relative
+
+.pugpig-carousel__items-wrapper
   overflow: hidden
 
 .pugpig-carousel__items
   +transition( all 350ms )
+  overflow: hidden
   -webkit-backface-visibility: hidden
   -moz-backface-visibility: hidden
   -ms-backface-visibility: hidden
-  overflow: hidden
   > *
     @extend %ha
 
 .pugpig-carousel__nav-button
   @extend %clickable
   @extend %disable-selection
+  +transition( opacity 500ms )
   -webkit-backface-visibility: hidden
   -moz-backface-visibility: hidden
   -ms-backface-visibility: hidden
@@ -36,10 +40,3 @@
 .pugpig-carousel__item
   width: 100%
   float: left
-
-.pugpig-carousel__pager
-  @extend %horizontal-list
-
-.pugpig-carousel__pager-item
-  &.is-active
-    font-weight: bold

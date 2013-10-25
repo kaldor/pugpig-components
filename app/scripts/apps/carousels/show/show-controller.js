@@ -78,13 +78,11 @@ define([
         }, this ) );
 
         this.listenTo( this.carouselView, 'start:carousel:drag', _.bind( function() {
-          this.carouselView.freezeItemHeights()
-            .detachItems( this.itemIndex );
+          this.carouselView.detachItems( this.itemIndex );
         }, this ) );
 
         this.listenTo( this.carouselView, 'end:carousel:drag', _.bind( function() {
-          this.carouselView.reattachItems()
-            .unfreezeItemHeights();
+          this.carouselView.reattachItems();
         }, this ) );
       },
       listenForCloseEvent: function() {
@@ -126,6 +124,8 @@ define([
           .freezeItemWidth()
           .render()
           .freezeItemWidth()
+          .updateContainerHeight()
+          .freezeItemHeight()
           .enableAnimation();
         if ( this.options.initialIndex ) {
           this.carouselView.disableAnimation()
@@ -137,8 +137,12 @@ define([
         this.carouselView.disableAnimation()
           .updateContainerWidth()
           .resizeContainerToFitItems()
-          .freezeItemWidth();
+          .freezeItemWidth()
+          .unfreezeItemHeight()
+          .updateContainerHeight()
+          .freezeItemHeight()
         this.changeItem( null );
+        this.carouselView.enableAnimation();
       },
       isLastItem: function() {
         return this.itemIndex === (this.numViewItems - 1);
