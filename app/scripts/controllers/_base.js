@@ -6,8 +6,8 @@ define([
 
     Controllers.Base = Marionette.Controller.extend({
       constructor: function( options ) {
-        Marionette.Controller.prototype.constructor.call( this, options );
         this._instance_id = _.uniqueId( 'controller' );
+        Marionette.Controller.prototype.constructor.call( this, options );
         App.execute( 'register:instance', this, this._instance_id );
       },
       close: function() {
