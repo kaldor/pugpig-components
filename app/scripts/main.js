@@ -40,7 +40,7 @@
       }
     },
     map: {
-      "*": { "underscore": "lodash" }
+      '*': { 'underscore': 'lodash' }
     }
   });
 
