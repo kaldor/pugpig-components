@@ -1,4 +1,4 @@
-/* global YT*/
+/*global YT*/
 define([
   'app',
   'apps/youtube/config'

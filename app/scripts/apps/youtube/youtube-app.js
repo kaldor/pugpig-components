@@ -13,7 +13,7 @@ define([
       controllers = {
         show: []
       }, API = {
-        loadYouTubeAPI: function() {
+        loadAPI: function() {
           var tag = document.createElement( 'script' );
           tag.src = YouTubeApp.Config.apiUrl;
           var firstScriptTag = document.getElementsByTagName( 'script' )[ 0 ];
@@ -42,7 +42,7 @@ define([
         }
       };
 
-    YouTubeApp.on( 'before:start', API.loadYouTubeAPI );
+    YouTubeApp.on( 'before:start', API.loadAPI );
 
     YouTubeApp.on( 'start', API.createAll );
 
