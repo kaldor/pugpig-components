@@ -52,7 +52,9 @@
     'apps/modals/modals-app',
     'apps/carousels/carousels-app',
     'apps/toggle-target/toggle-target-app',
-    'apps/brightcove/brightcove-app'
+    'apps/brightcove/brightcove-app',
+    'apps/messaging/messaging-app',
+    'apps/snapshot/snapshot-app'
   ], function() {
 
     require([
