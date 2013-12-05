@@ -59,7 +59,7 @@
       'app',
       'fastclick',
       'jquery'
-    ], function ( App, Fastclick, $ ) {
+    ], function ( App, FastClick, $ ) {
 
       $(function() {
         FastClick.attach( document.body );
