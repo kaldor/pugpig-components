@@ -23,7 +23,7 @@ define([
         this.showView.render()
           .setContentMaxHeight()
           .appendContent()
-          .show()
+          .show();
       },
       appendShowViewToBody: function() {
         this.body.append( this.showView.$el );
