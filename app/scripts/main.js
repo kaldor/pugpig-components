@@ -53,6 +53,7 @@
     'apps/carousels/carousels-app',
     'apps/toggle-target/toggle-target-app',
     'apps/brightcove/brightcove-app',
+    'apps/youtube/youtube-app',
     'apps/messaging/messaging-app',
     'apps/snapshot/snapshot-app'
   ], function() {
