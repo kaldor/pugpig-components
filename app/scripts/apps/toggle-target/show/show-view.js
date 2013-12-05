@@ -40,7 +40,7 @@ define([
         this.getCurrentlyToggledTrigger()
           .removeClass( this.IS_TOGGLED_CLASS );
       },
-      closeVisible: function( trigger ) {
+      closeVisible: function() {
         this.hideCurrentlyVisibleTarget();
         this.untoggleCurrentlyToggledTrigger();
       },
