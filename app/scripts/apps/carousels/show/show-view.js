@@ -6,6 +6,8 @@ define([
   'hammer'
 ], function( App, CarouselTemplate, ProgressTemplate ) {
 
+  'use strict';
+
   App.module('CarouselsApp.Show', function( Show, App, Backbone, Marionette, $, _ ) {
 
     var selectors = App.module( 'CarouselsApp' ).Config.selectors;

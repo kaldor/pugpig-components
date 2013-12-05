@@ -2,6 +2,8 @@ define([
   'app'
 ], function( App ) {
 
+  'use strict';
+
   App.module('CarouselsApp', function( CarouselsApp, App, Backbone, Marionette, $, _ ) {
 
     var moduleNamespace = '.pugpig-carousel';

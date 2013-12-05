@@ -3,6 +3,8 @@ define([
   'apps/modals/config'
 ], function( App ) {
 
+  'use strict';
+
   App.module('ModalsApp.Setup', function( Setup, App, Backbone, Marionette, $, _ ) {
 
     var selectors = App.module( 'ModalsApp' ).Config.selectors;

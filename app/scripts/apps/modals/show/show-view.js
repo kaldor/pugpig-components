@@ -4,6 +4,8 @@ define([
   'apps/modals/config'
 ], function( App, LayoutTemplate ) {
 
+  'use strict';
+
   App.module('ModalsApp.Show', function( Show, App, Backbone, Marionette, $, _ ) {
 
     var selectors = App.module( 'ModalsApp' ).Config.selectors;

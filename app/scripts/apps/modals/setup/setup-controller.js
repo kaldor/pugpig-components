@@ -2,6 +2,8 @@ define([
   'app'
 ], function( App ) {
 
+  'use strict';
+
   App.module('ModalsApp.Setup', function( Setup, App, Backbone, Marionette, $, _ ) {
 
     Setup.Controller = App.Controllers.Base.extend({

@@ -3,6 +3,8 @@ define([
   'apps/brightcove/config'
 ], function( App ) {
 
+  'use strict';
+
   App.module('BrightcoveApp.Show', function( Show, App, Backbone, Marionette, $, _ ) {
 
     var selectors = App.module( 'BrightcoveApp' ).Config.selectors;

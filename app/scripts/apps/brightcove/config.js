@@ -2,6 +2,8 @@ define([
   'app'
 ], function( App ) {
 
+  'use strict';
+
   App.module('BrightcoveApp', function( BrightcoveApp, App, Backbone, Marionette, $, _ ) {
 
     var moduleNamespace = '.pugpig-brightcove';

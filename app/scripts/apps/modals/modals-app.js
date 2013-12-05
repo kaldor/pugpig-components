@@ -7,6 +7,8 @@ define([
   'apps/modals/show/show-controller'
 ], function( App ) {
 
+  'use strict';
+
   App.module('ModalsApp', function( ModalsApp, App, Backbone, Marionette, $, _ ) {
 
     var selectors = ModalsApp.Config.selectors,

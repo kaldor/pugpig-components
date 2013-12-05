@@ -3,6 +3,8 @@ define([
   'apps/toggle-target/config'
 ], function( App ) {
 
+  'use strict';
+
   App.module('ToggleTargetApp.Show', function( Show, App, Backbone, Marionette, $, _ ) {
 
     var config = App.module( 'ToggleTargetApp' ).Config,

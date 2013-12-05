@@ -3,6 +3,8 @@ define([
   'apps/carousels/config'
 ], function( App ) {
 
+  'use strict';
+
   App.module('CarouselsApp.Show', function( Show, App, Backbone, Marionette, $, _ ) {
 
     var selectors = App.module( 'CarouselsApp' ).Config.selectors;

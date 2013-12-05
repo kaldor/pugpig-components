@@ -4,6 +4,8 @@ define([
   'apps/toggle-target/show/show-controller'
 ], function( App ) {
 
+  'use strict';
+
   App.module('ToggleTargetApp', function( ToggleTargetApp, App, Backbone, Marionette, $, _ ) {
 
     var selectors = ToggleTargetApp.Config.selectors,

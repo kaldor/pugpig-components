@@ -2,6 +2,8 @@ define([
   'app'
 ], function( App ) {
 
+  'use strict';
+
   App.module('ToggleTargetApp', function( ToggleTargetApp, App, Backbone, Marionette, $, _ ) {
 
     var moduleNamespace = '.pugpig-toggle-target';

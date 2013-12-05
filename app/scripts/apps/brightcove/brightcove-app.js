@@ -5,6 +5,8 @@ define([
   'apps/brightcove/show/show-controller'
 ], function( App ) {
 
+  'use strict';
+
   App.module('BrightcoveApp', function( BrightcoveApp, App, Backbone, Marionette, $, _ ) {
 
     var selectors = BrightcoveApp.Config.selectors,
