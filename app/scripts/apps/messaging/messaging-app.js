@@ -25,6 +25,7 @@ define([
             var iframe = document.createElement( 'iframe' ),
             params = (typeof message.data !== 'undefined') ? API.buildRequestParams( message.data ) : '';
 
+            iframe.style.display = 'none';
             iframe.setAttribute( 'src', 'pugpig://' + message.type + params );
             document.documentElement.appendChild( iframe );
             iframe.parentNode.removeChild( iframe );
